@@ -21,8 +21,8 @@ location: "Coventry, UK"
 resume_url: /docs/Nishant Rai CV.pdf
 #-------------------------------
 # Contact links
-linkedln: "https://https://www.linkedin.com/in/nishant-rai-81a993329" # Add your linkedln handle
-github: "https://https://github.com/NishantRai567"  # Add your github handle
+linkedln: "https://www.linkedin.com/in/nishant-rai-81a993329" # Add your linkedln handle
+github: "https://github.com/NishantRai567"  # Add your github handle
 
 paginate: 6
 paginate_path: "/page/:num"

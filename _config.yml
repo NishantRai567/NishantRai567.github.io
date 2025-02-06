@@ -12,7 +12,7 @@ title: Nishant Rai
 description: "Hi I'm Nishant Rai, and I'm an aspiring Data Scientist.  My portfolio focuses on interesting projects I've recently undertaken, with a strong emphasis on business impact. Please visit my Github & LinkedIn pages (or download my Resume) by using the links below!"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-avater_image:
+avater_image: /img/github profile.png
 
 #-------------------------------
 # About Section

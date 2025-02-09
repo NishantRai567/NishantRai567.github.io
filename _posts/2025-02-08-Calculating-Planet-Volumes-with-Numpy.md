@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Calculating Planet Volumes with Numpy
-image: "/posts/primes_image.jpeg"
+image: "/posts/01-solar-system-pia12114_orig.avif"
 tags: [Numpy]
 ---
 

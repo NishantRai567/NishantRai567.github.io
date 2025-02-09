@@ -22,7 +22,7 @@ Let's start by creating a one dimensional array containing the radii of all the 
 ```ruby
 radii = np.array([2439.7,6051.8,603171,3389.7,69911,58232,25362,24622])
 ```
-As you may know, the formula for calculating the volume of a sphere is 4/3*pi*r^3. An example of how we can caluclate the volume of a planet of radius 10 in python is
+As you may know, the formula for calculating the volume of a sphere is **V = 4/3 π r³**. An example of how we can caluclate the volume of a planet of radius 10 in python is
 
 ```ruby
 r = 10
@@ -57,5 +57,7 @@ print(volumes)
 
 Wow! That took no time at all. Fractions of a second. This just highlights how impressive numpy is with its mathematical calculations.
 
-In summary, we could have done this in other ways, but numpy gives us a really clean and fast method. The reason this approach is so fast is that a numpy array can only contain a single data type whereas lists or tuples can contain a number of different data types. This restriction means that numpy is able to send the task to the highly optimised C code, resulting in a huge boost in computational speed compared to a for loop in conjuction with a list.
+In summary, we could have done this in other ways, but numpy gives us a really clean and fast method. The reason this approach is so fast is that a single numpy array can only contain a single data type whereas lists or tuples could contain a number of different data types. This restriction means that numpy is able to send the task to the highly optimised C code that numpy is built upon. Ultimately, this results in a huge boost in computational speed compared to a normal python procedure involving a **for** loop in conjuction with a list, where the data type for each item must be checked.For high volumes of data with a large amount of iterations, this takes a lot of time. 
+
+While this may be a short and simple project, it showcases just how amazing  numpy is in it's ability for mathematical processing.
 

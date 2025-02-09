@@ -42,7 +42,7 @@ print(volumes)
 Amazing! We are instantly returned an array of the volumes of all 8 planets in our solar system. This is pretty cool, but let me show you something that is even cooler.
 Let's crank this up a step and overwrite our radii object with a 1d array that contains 1 million random integers between 1 and 10000. These values will represent the radius measurements of 1 million fictional plantets.
 
-``ruby
+```ruby
 radii=np.random.randint(1,1000,1000000)
 ```
 If we look in our variable explorer we now see our radii object has a size of 1000000. Let's now calculate the volume of each one of these 1 million planets using numpy. How long do you think this might take? It has to run this calculation for 1 million values

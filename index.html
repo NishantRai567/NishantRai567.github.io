@@ -2,20 +2,9 @@
 layout: default
 ---
 
-<!-- Full-width section for title and description -->
 <div class="container-fluid">
     <div class="row">
-        <!-- Full-width column for title and description (col-12) -->
-        <div class="col-12 text-center">
-            <h1>{{ site.title }}</h1> <!-- Site title, typically your name -->
-            <p>{{ site.description }}</p> <!-- Site description -->
-        </div>
-    </div>
-</div>
-
-<!-- Posts Section -->
-<div class="container-fluid">
-    <div class="row">
+        <!-- Use the full-width column (col-12) to remove any side columns -->
         <div class="col-12">
             <div class="row">
                 {% for post in paginator.posts %}
@@ -26,4 +15,3 @@ layout: default
         </div>
     </div>
 </div>
-

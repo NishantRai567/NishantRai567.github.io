@@ -1,5 +1,5 @@
 # Remote theme directory
-remote_theme:  forty-jekyll/forty-jekyll-theme
+remote_theme:  andrewbanchich/forty-jekyll-theme
 
 plugins:
   - jekyll-paginate

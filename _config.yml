@@ -1,5 +1,5 @@
 # Remote theme directory
-remote_theme:  "minimal-mistakes-jekyll"
+remote_theme:  analytics-link/analytics-link.github.io
 
 plugins:
   - jekyll-paginate

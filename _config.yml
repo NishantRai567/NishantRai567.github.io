@@ -9,7 +9,8 @@ plugins:
 #-------------------------------
 # General Site Settings
 title: Nishant Rai
-description: "Hi I'm Nishant Rai, and I'm an aspiring Data Scientist.  My portfolio focuses on interesting projects I've recently undertaken, with a strong emphasis on business impact. Please visit my Github & LinkedIn pages (or download my Resume) by using the links below!"
+description: "Hi, I’m Nishant Rai, an aspiring Data Scientist with a Master’s degree in Chemistry. My analytical mindset, honed through years of solving complex scientific problems, now drives my passion for Data Science and Machine Learning. I focus on applying statistical analysis and data-driven solutions to tackle real-world business challenges and deliver measurable impact.In my portfolio, you’ll find projects that showcase my ability to use data science techniques to generate actionable insights, optimize processes, and support decision-making in dynamic environments. I’m dedicated to continuous learning and staying on top of the latest trends in the field.
+Feel free to explore my work on GitHub and LinkedIn, or download my resume from the links below!"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 avater_image: /img/github profile.png

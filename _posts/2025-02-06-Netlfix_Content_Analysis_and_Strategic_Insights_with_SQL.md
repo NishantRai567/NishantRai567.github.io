@@ -64,7 +64,7 @@ ORDER BY COUNT(show_id) desc;
 
 ## Top 10 Countries with Most Content
 
-```sq;
+```sql;
 SELECT
     country,
     COUNT(show_id) as frequency

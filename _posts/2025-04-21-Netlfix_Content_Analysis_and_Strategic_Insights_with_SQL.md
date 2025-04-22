@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Netlfix Content Analysis with SQL
-image: "/posts/Netflix.jpeg"
+image: "/posts/Netflix.jpg"
 ---
 ## Project Overview
 

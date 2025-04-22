@@ -2,6 +2,7 @@
 layout: post
 title: Netlfix Content Analysis with SQL
 image: "/posts/Netflix.jpg"
+tags: [SQL]
 ---
 ## Project Overview
 

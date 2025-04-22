@@ -4,11 +4,32 @@ title: Netlfix Content Analysis with SQL
 image: "/posts/Netflix.jpg"
 tags: [SQL]
 ---
+
+# Table of contents
+
+- [00. Project Overview](#project-overview)
+- [01.Goals and Objectives](#goals-and-objectives)
+- [02. Data Overview](#data-overview)
+- [03. SQL Queries](#sql-queries)
+- [04. Questions and Findings](#questions-and-findings)
+- [05. Key Takeways](#key-takeways)
+- [06. Who this Project Helps](#who-this-project-helps)
+- [07. Growth & Next Steps](#growth-next-steps)
+
 ## Project Overview
 
 This project explores and analyzes Netflix's movie and TV show data using SQL. It uncovers trends in content types, production countries, release years, and more to gain insights into Netflix's evolving catalog.
 
-## 📊 Dataset
+## 🎯 Goals and Objectives
+- Determine the most popular content type each year.
+
+- Identify the most common genres by year and country.
+
+- Track the growth of Netflix content over time.
+
+- Discover country-level production and genre patterns.
+
+## 📊 Data Overview
 - **Source:** [Kaggle - Netflix Movies and TV Shows](https://www.kaggle.com/shivamb/netflix-shows)
 - **Size:** ~8,800 titles
 - **Key Columns:** `show_id`, `title`, `type`, `director`, `cast`, `country`, `release_year`, `duration`, `listed_in`, `rating`
@@ -99,15 +120,6 @@ WHERE EXTRACT(YEAR FROM clean_release_date) >2000
 GROUP BY EXTRACT(YEAR FROM clean_release_date)
 ORDER BY year;
 ```
-
-## 🎯 Goals / Objectives
-- Determine the most popular content type each year.
-
-- Identify the most common genres by year and country.
-
-- Track the growth of Netflix content over time.
-
-- Discover country-level production and genre patterns.
 
 ## 🔍 Questions & Findings
 
@@ -236,18 +248,6 @@ ORDER BY year;
 ---
 
 ## 📈 Key Takeways
-
-- 70% of Netflix content is movies, indicating an opportunity to expand TV show offerings, especially multi-season series, to boost retention.
-
-- Strong international presence, especially in India and Japan, suggests potential for more localized productions.
-
-- Dramas and Documentaries dominate, highlighting areas for further investment and marketing focus.
-
-- With 66% of shows having only 1 season, Netflix risks losing users seeking long-form series.
-
-
-
-## 📈 Key Findings
 
 - Drama remains Netflix’s most consistently produced and globally distributed genre, making it a cornerstone for international audience appeal and long-term viewer engagement strategies.
 

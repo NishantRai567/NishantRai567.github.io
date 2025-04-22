@@ -15,14 +15,99 @@ This project explores and analyzes Netflix's movie and TV show data using SQL. I
 - **Timeframe:** Up to 2021
 - **Limitations:** Does not include watch/view count data or user-level metrics
 
+## SQL Queries
+
+### Number of Movies vs TV Shows
+
+```sql 
+SELECT 
+    category,
+    COUNT(show_id) as frequency 
+FROM 
+    netflix_cleaned
+GROUP BY category;
+```
+
+### Most Common Content Ratings
+
+```sql
+SELECT
+    rating,
+    COUNT(show_id) as frequency
+FROM 
+    netflix_cleaned
+GROUP BY rating
+ORDER BY COUNT(show_id) desc;
+```
+
+## Top 10 Countries with Most Content
+
+```sq;
+SELECT
+    country,
+    COUNT(show_id) as frequency
+FROM 
+    netflix_cleaned
+WHERE 
+    country is not null
+GROUP BY 
+    country
+ORDER BY frequency DESC
+LIMIT 10;
+```
+
+## Top 10 Countries for TV Shows only
+
+```sql
+SELECT 
+    country,
+    COUNT(show_id) as frequency
+FROM 
+    netflix_cleaned
+WHERE 
+    category='TV Show'
+GROUP BY 
+    country
+ORDER BY frequency DESC
+LIMIT 10;
+```
+## Number of Releases per Year
+
+```sql
+SELECT 
+    EXTRACT(YEAR FROM clean_release_date) AS release_year,
+    COUNT(*) as title_count
+FROM netflix_cleaned
+WHERE 
+   EXTRACT(YEAR FROM clean_release_date)>2000
+GROUP BY 
+    EXTRACT(YEAR FROM clean_release_date)
+ORDER BY 
+    EXTRACT(YEAR FROM clean_release_date)
+```
+## How has Netflix's intenational content grown over time
+
+```sql
+SELECT 
+    EXTRACT(YEAR FROM clean_release_date) AS year,
+    COUNT(DISTINCT(country)) AS unique_countries,
+    COUNT(*) FILTER (WHERE country != 'United States') as international_countries,
+    COUNT(*) AS total_titles,
+    ROUND(COUNT(*) FILTER (WHERE country != 'United States')*1.0/COUNT(*),2) AS international_ratio
+FROM netflix_cleaned
+WHERE EXTRACT(YEAR FROM clean_release_date) >2000
+GROUP BY EXTRACT(YEAR FROM clean_release_date)
+ORDER BY year;
+```
+
 ## 🎯 Goals / Objectives
-Determine the most popular content type each year.
+- Determine the most popular content type each year.
 
-Identify the most common genres by year and country.
+- Identify the most common genres by year and country.
 
-Track the growth of Netflix content over time.
+- Track the growth of Netflix content over time.
 
-Discover country-level production and genre patterns.
+- Discover country-level production and genre patterns.
 
 ## 🔍 Questions & Findings
 
@@ -96,7 +181,7 @@ Discover country-level production and genre patterns.
 | Director        | Number of Titles |
 |-----------------|------------------|
 | Raul Campos,    | 18
-  Jan Suter       |                  |
+  Jan Suter       | 18               |
 | Marcus Raboy    | 16               |
 | Jay Karas       | 14               |
 
@@ -121,10 +206,11 @@ Discover country-level production and genre patterns.
 
 
 | Country |  Genre                 | Count |
-|---------|----------------------  |       |
+|---------|------------------------|-------|
 | UK      | Documentaries          | 41    |
 | Taiwan  | International TV Shows | 31    |
 | Egypt   | Comedies               | 29    |
+
 > **Insight:** Countries have genre specialties—Taiwan excels in Internation TV Shows, UK in Documentaries.
 
 ---
@@ -135,6 +221,7 @@ Discover country-level production and genre patterns.
 |-------------------|---------------|
 | Grey’s Anatomy    | 1             |
 | NCIS              | 12            |
+
 > **Insight:** Some long-running shows are also syndicated globally.
 
 ---

@@ -18,7 +18,7 @@ tags: [SQL]
 
 ## Project Overview
 
-This project analySes Netflix’s extensive catalog of movies and TV shows using SQL. By examining key attributes such as content types, production countries, release years, and genres, it uncovers patterns and trends that highlight Netflix's evolving content strategy. The insights gained provide a deeper understanding of how Netflix’s catalogue has grown and diversified over time, as well as how global production and genre preferences have shaped the platform’s offerings.
+This project analyses Netflix’s extensive catalog of movies and TV shows using SQL. By examining key attributes such as content types, production countries, release years, and genres, it uncovers patterns and trends that highlight Netflix's evolving content strategy. The insights gained provide a deeper understanding of how Netflix’s catalogue has grown and diversified over time, as well as how global production and genre preferences have shaped the platform’s offerings.
 
 ## 🎯 Goals and Objectives
 - Determine the most popular content type each year.
@@ -64,7 +64,7 @@ ORDER BY COUNT(show_id) desc;
 
 ## Top 10 Countries with Most Content
 
-```sql;
+```sql
 SELECT
     country,
     COUNT(show_id) as frequency

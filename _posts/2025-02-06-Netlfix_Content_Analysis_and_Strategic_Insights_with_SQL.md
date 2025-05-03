@@ -5,6 +5,8 @@ image: "/posts/Netflix.jpg"
 tags: [SQL]
 ---
 
+In this project I will use SQL to analyse Netflix's extensive catalog of movies and TV shows!
+
 # Table of contents
 
 - [00. Project Overview](#project-overview)

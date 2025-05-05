@@ -124,6 +124,108 @@ GROUP BY EXTRACT(YEAR FROM clean_release_date)
 ORDER BY year;
 ```
 
+## Which directors have the most content on Netflix
+
+```sql
+SELECT
+    director,
+    COUNT(*) AS title_count
+FROM netflix_cleaned
+WHERE director is not null
+GROUP BY director
+ORDER BY title_count DESC;
+```
+
+ ## What genres are trending over time
+
+```sql
+WITH genre_counts as(
+SELECT
+    EXTRACT(YEAR FROM clean_release_date) as year,
+    "Type" as genre,
+    COUNT(*) as total_titles
+FROM netflix_cleaned
+WHERE EXTRACT(YEAR FROM clean_release_date)>2000
+GROUP BY 
+    EXTRACT(YEAR FROM clean_release_date),
+    "Type"),
+ranked_genres as(
+SELECT
+    year,
+    genre,
+    total_titles,
+    rank() over (partition by year order by total_titles DESC) as genre_rank
+FROM genre_counts
+)
+SELECT
+    year,
+    genre,
+    total_titles
+FROM ranked_genres
+WHERE genre_rank=1
+ORDER BY year,total_titles desc;
+```
+
+## Which genres have the highest content volume by country
+```sql
+WITH unnested_data AS (
+    SELECT
+        UNNEST(STRING_TO_ARRAY(country, ',')) AS country,
+        "Type"
+    FROM netflix_cleaned
+),
+genre_counts AS (
+    SELECT
+        country,
+        "Type" as genre,
+        COUNT(*) AS count
+    FROM unnested_data 
+    GROUP BY country, genre
+),
+ranked_genres AS (
+    SELECT
+        country,
+        genre,
+        count,
+        RANK() OVER (PARTITION BY country ORDER BY count DESC) AS rank
+    FROM genre_counts
+)
+SELECT
+    country,
+    genre
+FROM ranked_genres
+WHERE rank = 1
+ORDER BY count DESC
+LIMIT 324
+OFFSET 4;
+```
+
+## Which TV Shows have the longest run
+
+```sql
+SELECT
+    title,
+    rank() over (order by duration_value desc) as season_rank 
+FROM netflix_cleaned
+WHERE category='TV Show' 
+LIMIT 10;
+```
+## Running total of titles released per year
+
+```sql
+WITH release_year AS (
+SELECT 
+    EXTRACT(YEAR FROM clean_release_date) AS year,
+    COUNT(*) as titles_per_year
+FROM netflix_cleaned
+WHERE EXTRACT(YEAR FROM clean_release_date)>2000
+GROUP BY EXTRACT(YEAR FROM clean_release_date))
+
+SELECT
+    year,
+    SUM(titles_per_year) over (ORDER BY year) as total_titles
+FROM release_year
+```
 ## 🔍 Questions & Findings
 
 Based on the SQL queries, here are some of the insights derived from the data:
